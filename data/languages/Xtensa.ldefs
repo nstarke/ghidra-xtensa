@@ -9,10 +9,11 @@
             version="1.0"
             slafile="Xtensa.sla"
             processorspec="Xtensa.pspec"
-            manualindexfile=""
+            manualindexfile="../manuals/xtensa.idx"
             id="Xtensa:LE:24:default">
     <description>Tensilica Xtensa Instruction Set Architecture</description>
     <compiler name="default" spec="Xtensa.cspec" id="default"/>
+    <external_name tool="DWARF.register.mapping.file" name="Xtensa.dwarf"/>    
   </language>
   
 </language_definitions>

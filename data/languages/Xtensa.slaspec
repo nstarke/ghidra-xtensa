@@ -353,12 +353,29 @@ destC: reloc is imm18 [ reloc = ((inst_next-3) & 0xFFFFFFFC) + ((imm18 + (imm18/
 	call destC;
 }
 
+
 :CALLX0 as is op2=0x0 & op1=0x0 & ar=0x0 & as & at=0xC & op0=0x0
 {
 	call_dest:4 = as;
 	a0 = inst_next;
 	call [call_dest];
 }
+
+
+# CALL8 - Call PC-relative, Rotate Window by 8, pg. 300.
+:CALL8 dest18 is dest18 & at_l = 0b10 & op0 = 0b0101 
+{
+    local dst:4 = dest18;
+    a2=a10;
+    a3=a11;
+    a4=a12;
+    a5=a13;
+    a6=a14;
+    a7=a15;    	
+    a0 = inst_next;
+    call [dst];
+}
+
 
 :DSYNC is op2=0x0 & op1=0x0 & r=0x2 & s=0x0 & t=0x3 & op0=0x0
 {} # waits for all previously fetched WSR.*, XSR.*, WDTLB, and IDTLB instructions
@@ -482,6 +499,14 @@ destC: reloc is imm18 [ reloc = ((inst_next-3) & 0xFFFFFFFC) + ((imm18 + (imm18/
 
 :RER at, as is op2=0x4 & op1=0x0 & r=0x6 & as & at & op0=0x0
 {}#Almost never used, so no implementation yet
+
+
+# ENTRY - Subroutine Entry, pg. 340.
+#:ENTRY s, imm12  & u2_6.7 = 0b00 & at_l = 0b11 & op0 = 0b0110 ;
+#    #as = as + amn;
+#
+#    a1 = a1 - amn;
+#}
 
 
 :RET is op2=0x0 & op1=0x0 & r=0x0 & s=0x0 & t=0x8 & op0=0x0

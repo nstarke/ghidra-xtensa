@@ -1,3 +1,0 @@
-@include "xtensa.sinc"
-@include "xtensaInstructions.sinc"
-@include "xtensaTodo.sinc"

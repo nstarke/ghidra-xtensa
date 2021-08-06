@@ -1,4 +1,4 @@
-# Tensilica Xtensa module for Ghidra
+# Xtensa module for Ghidra - Big Endian Version
 
 ![Screenshot](/screenshot.png?raw=true)
 
@@ -6,13 +6,11 @@
 
 ```
 $ cd ghidra_9.1.X/Ghidra/Processors
-$ git clone  https://github.com/Ebiroll/ghidra-xtensa Xtensa
+$ git clone  https://github.com/nstarke/ghidra-xtensa Xtensa
 $ cd Xtensa
 $ make
 $
 ```
-
-Or download a pre-built release and unzip it to `Ghidra/Processors`.
 
 # Bugs
 

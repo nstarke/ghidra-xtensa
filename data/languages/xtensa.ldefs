@@ -9,8 +9,8 @@
             slafile="xtensa.sla"
             processorspec="xtensa.pspec"
             manualindexfile="../manuals/xtensa.idx"
-            id="Xtensa:LE:BE:default">
-    <description>Tensilica Xtensa 32-bit little-endian</description>
+            id="Xtensa:BE:32:default">
+    <description>Xtensa 32-bit big-endian</description>
     <compiler name="default" spec="xtensa.cspec" id="default"/>
     <external_name tool="DWARF.register.mapping.file" name="xtensa.dwarf"/>
   </language>
